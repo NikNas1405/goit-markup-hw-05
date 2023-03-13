@@ -642,8 +642,9 @@ svg {
   flex-basis: calc((100% - 2 * 24px) / 3);
   max-width: 360px;
   background-color: var(--secondary-light-color);
+  border: 1px solid var(--accent-color);
   transition: box-shadow 250ms var(--timing-function);
-  }
+}
 
 .photo-gallery-item:is(:hover, :focus) {
   cursor: pointer;
@@ -654,7 +655,12 @@ svg {
 .photo-gallery-item-wrap {
   position: relative;
   overflow: hidden;
+  width: calc(100% + 2px);
+  transform: translate(-1px, -1px);
 }
+
+/* width: calc(100% + 2px) - надало змогу картинку збільшити на 2 пікселі = бордер 2-х сторін
+transform: translate(-1px, -1px) - змістило картинку на бордер */
 
 .photo-gallery-item-text-overlay {
   position: absolute;
@@ -676,8 +682,6 @@ svg {
 
 .gallery-item-text-part {
   padding: 32px 16px;
-  border: 1px solid var(--accent-color);
-  border-top: none;
 }
 
 .gallery-subtitle {
